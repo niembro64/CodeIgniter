@@ -22,7 +22,7 @@ class News_model extends CI_Model
   {
     $this->load->helper('url');
 
-    $slug = url_title($this->input->post('title'), 'dash', TRUE);
+    $slug = url_title($this->input->post('title'), '-', TRUE);
 
     $data = array(
       'title' => $this->input->post('title'),
@@ -31,5 +31,11 @@ class News_model extends CI_Model
     );
 
     return $this->db->insert('news', $data);
+  }
+
+  public function delete_news_item($id)
+  {
+    $this->db->where('id', $id);
+    $this->db->delete('news');
   }
 }
