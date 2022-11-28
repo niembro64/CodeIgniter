@@ -53,4 +53,10 @@ class News extends CI_Controller
       $this->load->view('news/success');
     }
   }
+
+  public function delete($slug = null)
+  {
+    $this->news_model->delete_news($slug);
+    $this->load->view('news/');
+  }
 }

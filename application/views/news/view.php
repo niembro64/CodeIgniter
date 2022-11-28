@@ -1,5 +1,6 @@
 <?php
-echo '<h2>'.$news_item['title'].'</h2>';
+echo '<h2>' . $news_item['title'] . '</h2>';
+echo $news_item['slug'];
+echo '<br>';
+echo '<br>';
 echo $news_item['text'];
-
-// delete news item
