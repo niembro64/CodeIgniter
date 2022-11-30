@@ -19,7 +19,7 @@ class News extends CI_Controller
     $this->load->view('templates/footer');
   }
 
-  public function view($slug = NULL)
+  public function controller_view($slug = NULL)
   {
     $data['news_item'] = $this->news_model->model_get_news_one_by_slug($slug);
 
@@ -34,7 +34,7 @@ class News extends CI_Controller
     $this->load->view('templates/footer');
   }
 
-  public function create()
+  public function controller_create()
   {
     $this->load->helper('form');
     $this->load->library('form_validation');
@@ -66,7 +66,7 @@ class News extends CI_Controller
     redirect('news');
   }
 
-  public function update($xxx)
+  public function controller_update($xxx)
   {
     $this->load->helper('form');
     $this->load->library('form_validation');
