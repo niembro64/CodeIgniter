@@ -21,7 +21,7 @@ class News extends CI_Controller
 
   public function view($slug = NULL)
   {
-    $data['news_item'] = $this->news_model->model_get_news_one($slug);
+    $data['news_item'] = $this->news_model->model_get_news_one_by_slug($slug);
 
     if (empty($data['news_item'])) {
       show_404();
@@ -56,13 +56,13 @@ class News extends CI_Controller
 
   public function controller_delete_one_id($id)
   {
-    $this->news_model->model_delete_news_one_id($id);
+    $this->news_model->model_delete_news_one_by_id($id);
     redirect('news');
   }
 
   public function controller_delete_one_slug($slug)
   {
-    $this->news_model->model_delete_news_one_slug($slug);
+    $this->news_model->model_delete_news_one_by_slug($slug);
     redirect('news');
   }
 
@@ -72,7 +72,7 @@ class News extends CI_Controller
     $this->load->library('form_validation');
 
     $data['title'] = 'Update a News Item';
-    $data['news_item'] = $this->news_model->model_get_news_one($xxx);
+    $data['news_item'] = $this->news_model->model_get_news_one_by_slug($xxx);
 
     $this->form_validation->set_rules('title', 'Title', 'required');
     $this->form_validation->set_rules('text', 'Text', 'required');
@@ -82,7 +82,7 @@ class News extends CI_Controller
       $this->load->view('news/update', $data);
       $this->load->view('templates/footer');
     } else {
-      $this->news_model->model_update_news($xxx);
+      $this->news_model->model_update_news_by_id($xxx);
       redirect('news');
     }
   }
