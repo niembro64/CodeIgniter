@@ -7,13 +7,13 @@ class News_model extends CI_Model
     $this->load->database();
   }
 
-  public function get_news_all()
+  public function model_get_news_all()
   {
     $query = $this->db->get('news');
     return $query->result_array();
   }
 
-  public function get_news_one($slug)
+  public function model_get_news_one($slug)
   {
     $query = $this->db->get_where('news', array('slug' => $slug));
     return $query->row_array();
