@@ -19,7 +19,7 @@ class News extends CI_Controller
     $this->load->view('templates/footer');
   }
 
-  public function controller_view($slug = NULL)
+  public function controller_view_one_by_slug($slug = NULL)
   {
     $data['news_item'] = $this->news_model->model_get_news_one_by_slug($slug);
 
