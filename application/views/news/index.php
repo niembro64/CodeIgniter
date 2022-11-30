@@ -5,6 +5,6 @@
   <?php echo $news_item['text']; ?>
   <div class="main">
   </div>
-  <p><a href="<?php echo site_url('news/' . $news_item['slug']); ?>">View article</a></p>
-  <a href="<?php echo site_url('news/delete/' . $news_item['id']); ?>"><button>Delete Me</button></a>
+  <p><a href="<?php echo site_url('news/' . $news_item['slug']); ?>">View <?php echo $news_item['id'] ?></a></p>
+  <a href="<?php echo site_url('news/delete/' . $news_item['id']); ?>"><button>Delete <?php echo $news_item['id'] ?></button></a>
 <?php endforeach; ?>
