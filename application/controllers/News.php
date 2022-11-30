@@ -82,7 +82,7 @@ class News extends CI_Controller
       $this->load->view('news/update', $data);
       $this->load->view('templates/footer');
     } else {
-      $this->news_model->update_news($xxx);
+      $this->news_model->model_update_news($xxx);
       redirect('news');
     }
   }

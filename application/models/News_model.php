@@ -41,7 +41,7 @@ class News_model extends CI_Model
     $this->db->delete('news', array('slug' => $slug));
   }
 
-  public function update_news($id)
+  public function model_update_news($id)
   {
     $this->load->helper('url');
     $slug = url_title($this->input->post('title'), '-', TRUE);
