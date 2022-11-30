@@ -34,7 +34,7 @@ class News extends CI_Controller
     $this->load->view('templates/footer');
   }
 
-  public function controller_create()
+  public function controller_create_one()
   {
     $this->load->helper('form');
     $this->load->library('form_validation');
@@ -66,13 +66,13 @@ class News extends CI_Controller
     redirect('news');
   }
 
-  public function controller_update($xxx)
+  public function controller_update_one_by_id($id)
   {
     $this->load->helper('form');
     $this->load->library('form_validation');
 
     $data['title'] = 'Update a News Item';
-    $data['news_item'] = $this->news_model->model_get_news_one_by_slug($xxx);
+    $data['news_item'] = $this->news_model->model_get_news_one_by_id($id);
 
     $this->form_validation->set_rules('title', 'Title', 'required');
     $this->form_validation->set_rules('text', 'Text', 'required');
@@ -82,7 +82,7 @@ class News extends CI_Controller
       $this->load->view('news/update', $data);
       $this->load->view('templates/footer');
     } else {
-      $this->news_model->model_update_news_by_id($xxx);
+      $this->news_model->model_update_news_by_id($id);
       redirect('news');
     }
   }
