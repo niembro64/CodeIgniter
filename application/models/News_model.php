@@ -31,12 +31,12 @@ class News_model extends CI_Model
     return $this->db->insert('news', $data);
   }
 
-  public function delete_news($id)
+  public function delete_news_one_id($id)
   {
     $this->db->delete('news', array('id' => $id));
   }
 
-  public function delete_news_slug($slug)
+  public function delete_news_one_slug($slug)
   {
     $this->db->delete('news', array('slug' => $slug));
   }
