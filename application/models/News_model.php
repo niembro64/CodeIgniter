@@ -20,7 +20,7 @@ class News_model extends CI_Model
   }
   public function model_get_news_one_by_id($id)
   {
-    $query = $this->db->get_where('news', array('slug' => $id));
+    $query = $this->db->get('news', array('id' => $id));
     return $query->row_array();
   }
 
