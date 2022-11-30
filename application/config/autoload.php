@@ -134,3 +134,4 @@ $autoload['language'] = array();
 */
 $autoload['model'] = array();
 $autoload['database'] = array();
+$autoload['helper'] = array('html');

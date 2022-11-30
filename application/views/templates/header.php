@@ -1,8 +1,8 @@
 <html>
 
 <head>
-
   <?php echo '<title>News : ' . $title . '</title>' ?>
+  <?php echo link_tag('assets/css/style.css'); ?>
 </head>
 
 <body>
