@@ -50,8 +50,16 @@ class News extends CI_Controller
       $this->load->view('templates/footer');
     } else {
       $this->news_model->set_news();
+      // $this->load->view('templates/header', $data);
       $this->load->view('news/');
+      // $this->load->view('templates/footer');
       // $this->load->view('news/success');
     }
+  }
+
+  public function delete($id)
+  {
+    $this->news_model->delete_news($id);
+    // $this->load->view('news/');
   }
 }

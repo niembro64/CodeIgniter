@@ -7,5 +7,7 @@
   <div class="main">
   </div>
   <p><a href="<?php echo site_url('news/' . $news_item['slug']); ?>">View article</a></p>
+  <p><a href="<?php echo site_url('news/delete/' . $news_item['id']); ?>">Delete Me</a></p>
+
 
 <?php endforeach; ?>

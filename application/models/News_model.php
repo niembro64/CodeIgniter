@@ -32,4 +32,10 @@ class News_model extends CI_Model
 
     return $this->db->insert('news', $data);
   }
+
+  public function delete_news($id)
+  {
+    $this->db->where('id', $id);
+    $this->db->delete('news');
+  }
 }
