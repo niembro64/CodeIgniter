@@ -1,5 +1,5 @@
 <?php echo validation_errors(); ?>
-<?php echo form_open('news/router_create'); ?>
+<?php echo form_open('news/router_create_one'); ?>
 <div class="article-preview">
   <label for="title">Title:</label>
   <input type="text" name="title" /><br />

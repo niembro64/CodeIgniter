@@ -1,5 +1,5 @@
 <?php echo validation_errors(); ?>
-<?php echo form_open('news/router_update/' . $news_item['id']); ?>
+<?php echo form_open('news/router_update_one_by_slug/' . $news_item['id']); ?>
 <div class="article-preview">
   <label for="title">Title:</label>
   <input type="text" name="title" value="<?php echo $news_item['title']; ?>" /><br />
