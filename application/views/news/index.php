@@ -8,7 +8,7 @@
       <a class='btn view' href="<?php echo site_url('news/' . $news_item['slug']); ?>">View <?php echo $news_item['id'] ?></a>
       <a class='btn delete' href="<?php echo site_url('news/controller_delete_one_id/' . $news_item['id']); ?>">Delete By ID <?php echo $news_item['id'] ?></a>
       <a class='btn delete' href="<?php echo site_url('news/controller_delete_one_slug/' . $news_item['slug']); ?>">Delete By Slug <?php echo $news_item['id'] ?></a>
-      <a class='btn update' href="<?php echo site_url('news/update/' . $news_item['slug']); ?>">Update <?php echo $news_item['id'] ?></a>
+      <a class='btn update' href="<?php echo site_url('news/router_update/' . $news_item['slug']); ?>">Update <?php echo $news_item['id'] ?></a>
     </div>
   </div>
   <br>
