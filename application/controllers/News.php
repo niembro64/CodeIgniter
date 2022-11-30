@@ -56,13 +56,13 @@ class News extends CI_Controller
 
   public function delete($id)
   {
-    $this->news_model->delete_news_one_id($id);
+    $this->news_model->model_delete_news_one_id($id);
     redirect('news');
   }
 
   public function delete_slug($slug)
   {
-    $this->news_model->delete_news_one_slug($slug);
+    $this->news_model->model_delete_news_one_slug($slug);
     redirect('news');
   }
 
