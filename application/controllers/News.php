@@ -60,6 +60,12 @@ class News extends CI_Controller
     redirect('news');
   }
 
+  public function delete_slug($slug)
+  {
+    $this->news_model->delete_news_slug($slug);
+    redirect('news');
+  }
+
   public function update($id)
   {
     $this->load->helper('form');
