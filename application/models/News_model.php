@@ -48,7 +48,6 @@ class News_model extends CI_Model
       'slug' => $slug,
       'text' => $this->input->post('text')
     );
-    $this->db->where('id', $id);
-    $this->db->update('news', $data);
+    $this->db->update('news', $data, array('id' => $id));
   }
 }

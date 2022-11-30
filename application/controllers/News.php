@@ -66,13 +66,13 @@ class News extends CI_Controller
     redirect('news');
   }
 
-  public function update($id)
+  public function update($xxx)
   {
     $this->load->helper('form');
     $this->load->library('form_validation');
 
     $data['title'] = 'Update a News Item';
-    $data['news_item'] = $this->news_model->get_news($id);
+    $data['news_item'] = $this->news_model->get_news($xxx);
 
     $this->form_validation->set_rules('title', 'Title', 'required');
     $this->form_validation->set_rules('text', 'Text', 'required');
@@ -82,7 +82,7 @@ class News extends CI_Controller
       $this->load->view('news/update', $data);
       $this->load->view('templates/footer');
     } else {
-      $this->news_model->update_news($id);
+      $this->news_model->update_news($xxx);
       redirect('news');
     }
   }
