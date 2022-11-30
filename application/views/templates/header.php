@@ -6,8 +6,10 @@
 </head>
 
 <body>
-  <div class="buttons">
-    <a class='btn view' href="<?php echo site_url('news'); ?>">View All News Items</a>
-    <a class="btn update" href="<?php echo site_url('news/create'); ?>">Create News Item</a>
+  <div class="header">
+    <div class="buttons">
+      <a class='btn view' href="<?php echo site_url('news'); ?>">View All News Items</a>
+      <a class="btn update" href="<?php echo site_url('news/create'); ?>">Create News Item</a>
+    </div>
   </div>
   <h1>News : <?php echo $title; ?></h1>
