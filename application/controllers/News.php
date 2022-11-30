@@ -11,7 +11,7 @@ class News extends CI_Controller
 
   public function index()
   {
-    $data['news'] = $this->news_model->get_news();
+    $data['news'] = $this->news_model->get_news_all();
     $data['title'] = 'News Archive';
 
     $this->load->view('templates/header', $data);
@@ -21,7 +21,7 @@ class News extends CI_Controller
 
   public function view($slug = NULL)
   {
-    $data['news_item'] = $this->news_model->get_news($slug);
+    $data['news_item'] = $this->news_model->get_news_one($slug);
 
     if (empty($data['news_item'])) {
       show_404();
@@ -72,7 +72,7 @@ class News extends CI_Controller
     $this->load->library('form_validation');
 
     $data['title'] = 'Update a News Item';
-    $data['news_item'] = $this->news_model->get_news($xxx);
+    $data['news_item'] = $this->news_model->get_news_one($xxx);
 
     $this->form_validation->set_rules('title', 'Title', 'required');
     $this->form_validation->set_rules('text', 'Text', 'required');
