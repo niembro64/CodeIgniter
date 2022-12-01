@@ -19,13 +19,13 @@ class News extends CI_Controller
     $this->load->view('templates/footer');
   }
 
-  public function controller_view_one_by_slug($slug = NULL)
+  public function item($slug = NULL)
   {
     $data['news_item'] = $this->news_model->model_get_news_one_by_slug($slug);
 
-    if (empty($data['news_item'])) {
-      show_404();
-    }
+    // if (empty($data['news_item'])) {
+    //   show_404();
+    // }
 
     $data['title'] = $data['news_item']['title'];
 
@@ -34,7 +34,22 @@ class News extends CI_Controller
     $this->load->view('templates/footer');
   }
 
-  public function controller_create_one()
+  public function controller_v_create_one()
+  {
+    $this->load->helper('form');
+    $this->load->library('form_validation');
+
+    $data['title'] = 'Create a News Item';
+
+    $this->form_validation->set_rules('title', 'Title', 'required');
+    $this->form_validation->set_rules('text', 'Text', 'required');
+
+    $this->load->view('templates/header', $data);
+    $this->load->view('news/create');
+    $this->load->view('templates/footer');
+  }
+
+  public function controller_p_create_one()
   {
     $this->load->helper('form');
     $this->load->library('form_validation');
@@ -48,6 +63,26 @@ class News extends CI_Controller
       $this->load->view('templates/header', $data);
       $this->load->view('news/create');
       $this->load->view('templates/footer');
+    } else {
+      $this->news_model->model_set_news_one();
+      redirect('news');
+    }
+  }
+  public function controller_create_one()
+  {
+    $this->load->helper('form');
+    $this->load->library('form_validation');
+
+    $data['title'] = 'Create a News Item';
+
+    $this->form_validation->set_rules('title', 'Title', 'required');
+    $this->form_validation->set_rules('text', 'Text', 'required');
+
+    if ($this->form_validation->run() === FALSE) {
+      $this->index();
+      // $this->load->view('templates/header', $data);
+      // $this->load->view('news/create');
+      // $this->load->view('templates/footer');
     } else {
       $this->news_model->model_set_news_one();
       redirect('news');

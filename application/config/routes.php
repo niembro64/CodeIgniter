@@ -60,10 +60,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 $route['news/router_view_one_by_slug/(:any)'] = 'news/controller_view_one_by_slug/$1';
 $route['news/router_create_one'] = 'news/controller_create_one';
+$route['news/router_v_create_one'] = 'news/controller_v_create_one';
+$route['news/route_p_create_one'] = 'news/controller_p_create_one';
 $route['news/router_delete_one_id/(:any)'] = 'news/controller_delete_one_id/$1';
 $route['news/router_delete_one_slug/(:any)'] = 'news/controller_delete_one_slug/$1';
 $route['news/router_update_one_by_slug/(:any)'] = 'news/controller_update_one_by_id/$1';
 $route['news'] = 'news';
 // $route['news/(:any)'] = 'news/controller_view_one_by_slug/$1';
+$route['news/item'] = 'news/item';
 // $route['(:any)'] = 'pages/controller_view_one_by_slug/$1';
 // $route['default_controller'] = 'pages/controller_view_one_by_slug';
